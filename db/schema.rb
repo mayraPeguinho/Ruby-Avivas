@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_19_230706) do
-  create_table "rols", force: :cascade do |t|
+ActiveRecord::Schema[8.0].define(version: 2024_11_19_234048) do
+  create_table "roles", force: :cascade do |t|
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "password"
+    t.integer "role_id", null: false
+    t.datetime "entryDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_users_on_role_id"
+  end
+
+  add_foreign_key "users", "roles"
 end
