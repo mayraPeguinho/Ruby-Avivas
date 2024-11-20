@@ -1,5 +1,6 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  resource :session, only: [:new, :create, :destroy]
   resources :users
-  root "home#index"  # Esto hace que la ruta raíz cargue la acción index de HomeController
+  root "home#index"
 end
