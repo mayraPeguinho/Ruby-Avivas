@@ -13,9 +13,9 @@ Role.create(nombre: "Gerente")
 Role.create(nombre: "Empleado")
 
 admin = User.create(
-  alias: "admin_user", 
-  email: "admin@example.com", 
-  phone: "123456789", 
-  password: "admin", 
+  alias: "admin_user",
+  email: "admin@example.com",
+  phone: "123456789",
+  password: "admin",
   role: admin_role
 )

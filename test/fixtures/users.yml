@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  alias: MyString
   email: MyString
   phone: MyString
-  password: MyString
+  password_digest: MyString
   role: one
   entryDate: 2024-11-19 23:40:48
 
 two:
-  name: MyString
+  alias: MyString
   email: MyString
   phone: MyString
-  password: MyString
+  password_digest: MyString
   role: two
   entryDate: 2024-11-19 23:40:48

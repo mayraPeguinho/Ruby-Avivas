@@ -16,8 +16,8 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Email", with: @user.email
     fill_in "Entrydate", with: @user.entryDate
-    fill_in "Name", with: @user.name
-    fill_in "Password", with: @user.password
+    fill_in "Alias", with: @user.alias
+    fill_in "PasswordDigest", with: @user.password_digest
     fill_in "Phone", with: @user.phone
     fill_in "Role", with: @user.role_id
     click_on "Create User"
@@ -32,8 +32,8 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Email", with: @user.email
     fill_in "Entrydate", with: @user.entryDate.to_s
-    fill_in "Name", with: @user.name
-    fill_in "Password", with: @user.password
+    fill_in "Alias", with: @user.alias
+    fill_in "PasswordDigest", with: @user.password_digest
     fill_in "Phone", with: @user.phone
     fill_in "Role", with: @user.role_id
     click_on "Update User"
