@@ -4,7 +4,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     # Inicia sesión con el usuario existente
-    post session_path, params: { user: { email: @user.email, password: 'password' } }
+    post session_path, params: { user: { email: @user.email, password: "password" } }
   end
 
   test "should get index" do
@@ -20,14 +20,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should create user" do
     # Usamos un password y password_confirmation para crear el usuario
     assert_difference("User.count") do
-      post users_url, params: { user: { 
-        email: 'new_user@example.com', 
-        entryDate: '2024-11-23', 
-        alias: 'newuser', 
-        password: 'password', 
-        password_confirmation: 'password', 
-        phone: '123456789', 
-        role_id: 1 
+      post users_url, params: { user: {
+        email: "new_user@example.com",
+        entryDate: "2024-11-23",
+        alias: "newuser",
+        password: "password",
+        password_confirmation: "password",
+        phone: "123456789",
+        role_id: 1
       } }
     end
 
@@ -46,14 +46,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should update user" do
     # No deberíamos enviar password_digest en los parámetros
-    patch user_url(@user), params: { user: { 
-      email: @user.email, 
-      entryDate: @user.entryDate, 
-      alias: @user.alias, 
-      password: 'newpassword', 
-      password_confirmation: 'newpassword', 
-      phone: @user.phone, 
-      role_id: @user.role_id 
+    patch user_url(@user), params: { user: {
+      email: @user.email,
+      entryDate: @user.entryDate,
+      alias: @user.alias,
+      password: "newpassword",
+      password_confirmation: "newpassword",
+      phone: @user.phone,
+      role_id: @user.role_id
     } }
     assert_redirected_to user_url(@user)
   end
