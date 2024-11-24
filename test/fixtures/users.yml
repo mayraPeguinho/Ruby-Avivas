@@ -4,7 +4,7 @@ one:
   alias: MyString
   email: MyString
   phone: MyString
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('password') %>
   role: one
   entryDate: 2024-11-19 23:40:48
 
@@ -12,6 +12,6 @@ two:
   alias: MyString
   email: MyString
   phone: MyString
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('password') %>
   role: two
   entryDate: 2024-11-19 23:40:48
