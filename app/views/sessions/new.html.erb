@@ -1,24 +1,27 @@
-<h1>Sign In</h1>
-
-<%= form_with(model: @user, url: session_path, local: true) do |f| %>
+<div class="flex justify-center items-center w-full h-full">
+<%= form_with(model: @user, url: session_path, local: true, html: { class: "flex flex-col gap-5 w-1/5" }) do |f| %>
 
   <% if flash.now[:alert] %>
-    <div class="alert alert-danger">
+  <div class="w-full max-w-md mx-auto bg-red-500 text-white text-center py-2 px-4 rounded-xl mb-4">
       <%= flash.now[:alert] %>
     </div>
   <% end %>
 
   <div class="flex flex-col gap-2">
     <%= f.label :email %>
-    <%= f.text_field :email, required: true %>
+    <%= f.text_field :email, required: true, class:"border rounded-xl "%>
   </div>
 
   <div class="flex flex-col gap-2">
     <%= f.label :password %>
-    <%= f.password_field :password, required: true %>
+    <%= f.password_field :password, required: true, class:"border rounded-xl "%>
   </div>
 
   <div class="flex items-center justify-center">
-    <%= f.submit "Sign In", class: "bg-darkPurple text-white" %>
+    <%= f.submit "Iniciar Sesion", class: "bg-lilac text-darkPurple p-2 border border-lilac rounded-xl hover:text-white hover:bg-darkLilac hover:cursor-pointer font-medium" %>
   </div>
 <% end %>
+</div>
+
+
+

@@ -20,18 +20,21 @@
   </head>
 
   <body class="h-screen w-screen">
-  <nav class="w-full h-auto bg-darkPurple flex">
-  <p class='text-white py-5 px-2'>Productos</p>
-  <% if not user_signed_in? %>
-         <%= button_to 'Acceder', new_session_path, method: :get, class: 'text-white py-5 px-2' %>
-
+  <nav class="w-full h-auto bg-lilac flex justify-between">
+    <div class="flex ">
+      <p class='text-darkPurple py-5 px-2'>Productos</p>
+      <% if user_signed_in? %>
+        <%= link_to 'Usuarios', users_path, class: 'text-darkPurple py-5 px-2' %>
+      <% end %>
+    </div>
+    <% if not user_signed_in? %>
+      <%= button_to 'Acceder', new_session_path, method: :get, class: 'text-darkPurple py-5 px-2' %>
     <% end %>
-   <% if user_signed_in? %>
-      <%= button_to 'Sign Out', session_path, method: :delete, class: 'sign_out' %>
+    <% if user_signed_in? %>
+      <%= button_to 'Cerrar Sesion', session_path, method: :delete, class: 'text-darkPurple py-5 px-2'%>
     <% end %>
-
   </nav>
-    <main class="w-full h-full items-center justify-center bg-lilac flex flex-col">
+    <main class="w-full h-full bg-slate-200 flex flex-col">
    
       <%= yield %>
       <footer class="bg-gray-800 text-white py-4 mt-8">
